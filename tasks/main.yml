@@ -1,7 +1,7 @@
 ---
 # tasks file for motd
 - name: Set uptime_reboot_check based on uptime
-  set_fact:
+  ansible.builtin.set_fact:
     uptime_days: "{{ ansible_uptime_seconds | int / 86400 }}"
 
 - name: Get the current runlevel/default target
