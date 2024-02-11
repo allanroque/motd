@@ -1,0 +1,16 @@
+---
+# tasks file for motd
+- name: Set uptime_reboot_check based on uptime
+  set_fact:
+    uptime_days: "{{ ansible_uptime_seconds | int / 86400 }}"
+
+- name: Get the current runlevel/default target
+  ansible.builtin.command: systemctl get-default
+  register: runlevel_result
+  changed_when: false
+
+- name: Generate General motd from Template
+  ansible.builtin.template:
+    src: motd.j2
+    dest: /etc/motd
+    mode: '0644'

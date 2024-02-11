@@ -1,0 +1,25 @@
+galaxy_info:
+  author: Allan Roque
+  description: This Ansible role creates a dynamic MOTD for Linux servers, showcasing critical system info. Additionally, it emphasizes security by including a customizable unauthorized access warning message.
+  company: Red Hat
+  namespace: allanroque
+  role_name: motd
+
+  license: MIT
+
+  min_ansible_version: 2.9
+
+  platforms:
+  - name: rhel
+    versions:
+     - 8
+     - 9
+
+  galaxy_tags:
+    - system
+    - motd
+    - linux
+    - security
+    - info
+
+dependencies: []

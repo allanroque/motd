@@ -1,22 +1,46 @@
-Role Name
+motd
 =========
 
-A brief description of the role goes here.
+The motd Ansible role dynamically generates a Message of the Day (MOTD) for Linux servers, displaying essential system information and a customizable security warning for unauthorized access.
+
+````
+-----------------------------
+SERVER INFORMATION
+-----------------------------
+  Hostname: .................. niobe.example.com.br
+  Distro: .................... RedHat 9.3
+  Kernel: .................... 5.14.0-362.18.1.el9_3.x86_64
+  CPUs ....................... 12
+  Memory: .................... 30.84 GB
+  IPV4: ...................... ['192.168.0.206', '192.168.122.1', '192.168.0.139', '192.168.100.1']
+  SELinux: ................... enabled
+  Runlevel: .................. graphical.target
+  Time Zone: ................. -03
+  Uptime: .................... 11 hours
+
+  ______________________________________
+ / UNAUTHORIZED ACCESS IS PROHIBITED.   \
+ | Explicit, authorized permission is    |
+ | required for access or configuration. |
+ | Unauthorized attempts will result in  |
+ | legal actions. All activities are     |
+ \ logged and monitored.                 /
+  ---------------------------------------
+         \   ^__^
+          \  (oo)\_______
+             (__)\       )\/\
+                 ||----w |
+                 ||     ||
+
+---------------
+
+````
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
-
-Role Variables
---------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+Ansible >= 2.10
+No specific requirements. Designed to work on RHEL 8 and 9.
 
 Example Playbook
 ----------------
@@ -25,15 +49,9 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - allanroque.motd
 
 License
 -------
 
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
-# motd
+MIT
