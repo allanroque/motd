@@ -7,34 +7,4 @@
   Kernel: .................... {{ ansible_facts['kernel'] }}
   CPUs ....................... {{ ansible_processor_vcpus }}
   Memory: .................... {{ (ansible_memtotal_mb / 1024) | round(2) }} GB
-  IPV4: ...................... {{ ansible_all_ipv4_addresses }}
-  SELinux: ................... {{ ansible_selinux.status }}
-  Runlevel: .................. {{ runlevel_result.stdout }}
-  Time Zone: ................. {{ ansible_date_time['tz'] }}
-{% set uptime_days = (ansible_uptime_seconds / 86400) | int %}
-{% set uptime_hours = ((ansible_uptime_seconds % 86400) / 3600) | int %}
-{% set uptime_minutes = ((ansible_uptime_seconds % 3600) / 60) | int %}
-{% if uptime_days > 0 %}
-  Uptime: .................... {{ uptime_days }} days
-{% elif uptime_hours > 0 %}
-  Uptime: .................... {{ uptime_hours }} hours
-{% else %}
-  Uptime: .................... {{ uptime_minutes }} minutes
-{% endif %}
-
-  ______________________________________
- / UNAUTHORIZED ACCESS IS PROHIBITED.   \
- | Explicit, authorized permission is    |
- | required for access or configuration. |
- | Unauthorized attempts will result in  |
- | legal actions. All activities are     |
- \ logged and monitored.                 /
-  ---------------------------------------
-         \   ^__^
-          \  (oo)\_______
-             (__)\       )\/\
-                 ||----w |
-                 ||     ||
-
----------------
 
